@@ -18,7 +18,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 gem "pg", "~> 1.6.2"
-gem "standard", "~> 1.31.0"
+gem "standard", "~> 1.52.0"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
