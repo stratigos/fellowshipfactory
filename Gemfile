@@ -27,10 +27,12 @@ group :development, :test do
   gem "brakeman", require: false # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "bundler-audit", require: false # Audits gems for known security defects (use config/bundler-audit.yml to ignore issues)
   gem "debug", platforms: %i[mri windows], require: "debug/prelude" # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem "factory_bot_rails", "~> 6.5"
 end
 
 group :test do
   gem "capybara" # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "rspec-rails", "~> 8.0"
   gem "selenium-webdriver"
+  gem "shoulda-matchers", "~> 7.0"
 end
