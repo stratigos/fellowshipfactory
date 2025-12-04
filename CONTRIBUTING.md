@@ -2,6 +2,12 @@
 
 Thank you for your interest in fellowship factory. Currently, this project is invite-only. 🏭
 
+## Style
+
+Follow `standardrb` for code formatting.
+
+Follow [thoughtbot Ruby, Rails, and JS guides](https://github.com/thoughtbot/guides) for everything else.
+
 ## PRs
 
 All code changes must come from a branch. All branches must be merged with `rebase` or `squash`, and approved via a PR by at least one other developer.
