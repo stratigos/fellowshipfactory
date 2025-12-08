@@ -7,7 +7,7 @@ gem "bootsnap", "~> 1.19.0", require: false # Reduces boot times through caching
 gem "image_processing", "~> 1.2" # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "importmap-rails", "~> 2.2" # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "jbuilder", "~> 2.14.1"
-gem "kamal", "~> 1.3.0", require: false # Deploy this application anywhere as a Docker container [https://kamal-deploy.org]
+gem "kamal", "~> 2.9.0", require: false # Deploy this application anywhere as a Docker container [https://kamal-deploy.org]
 gem "propshaft", "~> 1.3.1" # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "puma", ">= 5.0"
 gem "stimulus-rails", "~> 1.3.4"
