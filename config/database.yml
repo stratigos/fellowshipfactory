@@ -11,13 +11,17 @@ development:
 
 test:
   <<: *default
-  database: fellowshipfactory_test
+  database: <%= ENV.fetch("PG_DATABASE", "fellowshipfactory_test") %>
+  host:     <%= ENV.fetch("PG_HOST", nil) %>
+  password: <%= ENV.fetch("PG_PASSWORD", nil) %>
+  port:     <%= ENV.fetch("PG_PORT", 5432) %>
+  username: <%= ENV.fetch("PG_USER", "stratigos") %>
 
 production:
   <<: *default
   database: fellowshipfactory_dev_production
-  password: <%= ENV["FELLOWSHIPFACTORY_PROD_DATABASE_USERNAME"] %>
-  username: <%= ENV["FELLOWSHIP_PROD_DATABASE_USERNAME"]
+  password: <%= ENV["DB_PASSWORD"] %>
+  username: <%= ENV["DB_USERNAME"] %>
 
 # ORIGINAL CONTENT FROM RAILS 8.1 CHECKOUT
 #
