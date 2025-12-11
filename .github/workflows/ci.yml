@@ -67,14 +67,28 @@ jobs:
 
   spec:
     runs-on: ubuntu-latest
-
-    # services:
-    #  redis:
-    #    image: valkey/valkey:8
-    #    ports:
-    #      - 6379:6379
-    #    options: --health-cmd "redis-cli ping" --health-interval 10s --health-timeout 5s --health-retries 5
+    services:
+      postgres: # Label used to access the service container
+        image: postgres:18 # Docker Hub image
+        env:
+          POSTGRES_PASSWORD: password
+        options: >- # Set health checks to wait until postgres has started
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports: # Maps tcp port 5432 on service container to the host
+          - 5432:5432
+      # redis:
+      #   image: valkey/valkey:8
+      #   ports:
+      #     - 6379:6379
+      #   options: --health-cmd "redis-cli ping" --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
+      - name: Install PostgreSQL client
+        run: |
+          sudo apt-get -yqq install libpq-dev
+
       - name: Checkout code
         uses: actions/checkout@v6
 
@@ -85,12 +99,24 @@ jobs:
 
       - name: Prepare Rails Test DB
         env:
+          PG_DATABASE: fellowshipfactory_test
+          PG_HOST: localhost
+          PG_USER: postgres
+          PG_PASSWORD: password
+          PG_PORT: 5432
           RAILS_ENV: test
         run: bin/rails db:test:prepare
 
-      - name: Run tests
+      - name: Run RSpec
         env:
+          # DISABLE_SPRING: 1
+          PG_DATABASE: fellowshipfactory_test
+          PG_HOST: localhost
+          PG_USER: postgres
+          PG_PASSWORD: password
+          PG_PORT: 5432
           RAILS_ENV: test
+          # WITH_COVERAGE: true
           # RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
           # REDIS_URL: redis://localhost:6379/0
         run: bin/rspec spec
