@@ -17,7 +17,7 @@ gem "solid_cable", "~> 3.0.12" # Use the database-backed adapters for Rails.cach
 gem "solid_cache", "~> 1.0.10" # Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
 gem "solid_queue", "~> 1.2.4" # Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
 gem "standard", "~> 1.52.0"
-gem "thruster", "~> 0.1.16", require: false # Add HTTP asset caching/compression and X-Sendfile acceleration to Puma [https://github.com/basecamp/thruster/]
+gem "thruster", "~> 0.1.17", require: false # Add HTTP asset caching/compression and X-Sendfile acceleration to Puma [https://github.com/basecamp/thruster/]
 
 group :development do
   gem "web-console" # Use console on exceptions pages [https://github.com/rails/web-console]
