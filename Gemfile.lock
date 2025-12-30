@@ -411,7 +411,7 @@ DEPENDENCIES
   bootsnap (~> 1.20.1)
   brakeman
   bundler-audit
-  capybara
+  capybara (~> 3.40)
   debug
   factory_bot_rails (~> 6.5)
   image_processing (~> 1.2)
