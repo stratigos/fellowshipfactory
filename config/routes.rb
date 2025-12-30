@@ -12,4 +12,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  namespace(:manage) do
+    root(controller: :dashboards, action: :index)
+  end
+
+  # root(to: "rails/welcome#index")
 end
