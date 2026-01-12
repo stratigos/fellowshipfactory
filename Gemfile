@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "~> 8.1.1"
+gem "rails", "~> 8.1.2"
 
 gem "bootsnap", "~> 1.20.1", require: false # Reduces boot times through caching; required in config/boot.rb
 # gem "bcrypt", "~> 3.1.7" # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
