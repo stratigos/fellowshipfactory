@@ -12,7 +12,7 @@ gem "propshaft", "~> 1.3.1" # The modern asset pipeline for Rails [https://githu
 gem "puma", ">= 5.0"
 gem "stimulus-rails", "~> 1.3.4"
 gem "turbo-rails", "~> 2.0.20"
-gem "pg", "~> 1.6.2"
+gem "pg", "~> 1.6.3"
 gem "solid_cable", "~> 3.0.12" # Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
 gem "solid_cache", "~> 1.0.10" # Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
 gem "solid_queue", "~> 1.2.4" # Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
