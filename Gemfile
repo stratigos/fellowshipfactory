@@ -24,7 +24,7 @@ group :development do
 end
 
 group :development, :test do
-  gem "brakeman", require: false # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
+  gem "brakeman", "~> 8.0.2", require: false
   gem "bundler-audit", require: false # Audits gems for known security defects (use config/bundler-audit.yml to ignore issues)
   gem "capybara", "~> 3.40"
   gem "debug", platforms: %i[mri windows], require: "debug/prelude" # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
