@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   namespace(:manage) do
+    resources(:organizations)
     root(controller: :dashboards, action: :index)
   end
 

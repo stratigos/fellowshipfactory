@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+@layer components {
+  .btn-primary {
+    @apply inline-block px-4 py-2 rounded-lg bg-green-600 text-white font-medium no-underline hover:bg-green-700 transition-colors;
+  }
+}
