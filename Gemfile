@@ -17,6 +17,7 @@ gem "solid_cable", "~> 3.0.12" # Use the database-backed adapters for Rails.cach
 gem "solid_cache", "~> 1.0.10" # Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
 gem "solid_queue", "~> 1.3.1" # Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
 gem "standard", "~> 1.53.0"
+gem "tailwindcss-rails", "~> 4.4.0"
 gem "thruster", "~> 0.1.17", require: false # Add HTTP asset caching/compression and X-Sendfile acceleration to Puma [https://github.com/basecamp/thruster/]
 
 group :development do
