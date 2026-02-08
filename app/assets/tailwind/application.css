@@ -4,4 +4,19 @@
   .btn-primary {
     @apply inline-block px-4 py-2 rounded-lg bg-green-600 text-white font-medium no-underline hover:bg-green-700 transition-colors;
   }
+
+  .input-primary {
+    @apply block w-full min-w-[16rem] px-4 py-2.5 text-base text-slate-800 bg-white border border-slate-300 rounded-lg shadow-sm
+           placeholder-slate-400
+           focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500
+           disabled:bg-slate-100 disabled:text-slate-500;
+  }
+
+  .flash-notice {
+    @apply bg-green-50 border-green-200 text-green-800;
+  }
+
+  .flash-alert {
+    @apply bg-red-50 border-red-200 text-red-800;
+  }
 }
