@@ -3,7 +3,10 @@ class Manage::OrganizationsController < Manage::ManageController
     @organization = Organization.new(organization_params)
 
     if @organization.save
-      redirect_to manage_organization_path(@organization), notice: "Organization created successfully"
+      redirect_to(
+        manage_organizations_path,
+        notice: "Organization created successfully"
+      )
     else
       render :new
     end
@@ -13,9 +16,15 @@ class Manage::OrganizationsController < Manage::ManageController
     @organization = Organization.find(params[:id])
 
     if @organization.destroy
-      redirect_to manage_organizations_path, notice: "Organization deleted successfully"
+      redirect_to(
+        manage_organizations_path,
+        notice: "Organization deleted successfully"
+      )
     else
-      redirect_to manage_organizations_path, alert: "Failed to delete organization"
+      redirect_to(
+        manage_organizations_path,
+        alert: "Failed to delete organization"
+      )
     end
   end
 
@@ -31,15 +40,14 @@ class Manage::OrganizationsController < Manage::ManageController
     @organization = Organization.new
   end
 
-  def show
-    @organization = Organization.find(params[:id])
-  end
-
   def update
     @organization = Organization.find(params[:id])
 
     if @organization.update(organization_params)
-      redirect_to manage_organization_path(@organization), notice: "Organization updated successfully"
+      redirect_to(
+        manage_organizations_path,
+        notice: "Organization updated successfully"
+      )
     else
       render :edit
     end

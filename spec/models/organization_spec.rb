@@ -22,4 +22,12 @@ RSpec.describe(Organization, type: :model) do
   it "has a valid factory" do
     expect(build(:organization)).to(be_valid)
   end
+
+  it do
+    is_expected.to(validate_presence_of(:name))
+  end
+
+  it do
+    is_expected.to(validate_length_of(:name))
+  end
 end

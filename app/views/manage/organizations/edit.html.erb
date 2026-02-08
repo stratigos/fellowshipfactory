@@ -1,0 +1,17 @@
+<div>
+  <div class="mb-8">
+    <h1 class="text-2xl font-bold">Edit Organization</h1>
+  </div>
+
+  <div>
+    <%=
+      render(
+        partial: "form",
+        locals: {
+          form_path: manage_organization_path(@organization),
+          form_model: @organization
+        }
+      )
+    %>
+  </div>
+</div>

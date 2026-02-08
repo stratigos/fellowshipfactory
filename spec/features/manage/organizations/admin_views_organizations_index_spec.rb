@@ -13,13 +13,42 @@ RSpec.feature("An Admin Views Organizations Index Page", type: :feature) do
     within("#manage-organization-row-#{organization_a.id}") do
       expect(page).to have_content("Mighty Men of Manessah")
       expect(page).to have_link("✍️ Edit")
-      expect(page).to have_link("🗑️ Delete")
+      expect(page).to have_button("🗑️ Delete")
     end
 
     within("#manage-organization-row-#{organization_b.id}") do
       expect(page).to have_content("Herders of Bashan")
       expect(page).to have_link("✍️ Edit")
-      expect(page).to have_link("🗑️ Delete")
+      expect(page).to have_button("🗑️ Delete")
     end
+  end
+
+  scenario "Navigate to New Organization" do
+    visit manage_organizations_url
+
+    click_link("⛪ New Organization")
+
+    expect(page.current_path).to eq(new_manage_organization_path)
+  end
+
+  scenario "Navigating to Edit Organization" do
+    organization = create(:organization)
+
+    visit manage_organizations_url
+
+    click_link("Edit")
+
+    expect(page.current_path).to eq(edit_manage_organization_path(organization))
+  end
+
+  scenario "Delete an Organization" do
+    create(:organization, name: "Edomite Exalters")
+
+    visit manage_organizations_url
+
+    click_button("🗑️ Delete")
+
+    expect(page).to have_content("Organization deleted successfully")
+    expect(page).not_to have_content("Edomite Exalters")
   end
 end
