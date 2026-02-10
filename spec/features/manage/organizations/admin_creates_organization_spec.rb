@@ -18,6 +18,10 @@ RSpec.feature("An Admin Views New Organization Page", type: :feature) do
 
     click_button("💾 Save")
 
-    expect(page).to have_content("")
+    expect(page).to have_content(
+      "1 error prevented this organization from being saved"
+    )
+
+    expect(page).to have_content("Name is too short")
   end
 end
