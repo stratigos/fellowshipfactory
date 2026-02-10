@@ -8,7 +8,8 @@
   <% if form_model.errors.any? %>
     <div class="mb-6 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">
       <p class="mb-2 font-semibold">
-        <%= pluralize(form_model.errors.count, "error") %> prevented this organization from being saved:
+        <%= pluralize(form_model.errors.count, "error") %>
+        prevented this organization from being saved:
       </p>
       <ul class="list-disc list-inside space-y-1">
         <% form_model.errors.full_messages.each do |message| %>

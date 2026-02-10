@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   namespace(:manage) do
     resources(:organizations, except: [:show])
+    resources(:people, except: [:show])
 
     root(controller: :dashboards, action: :index)
   end

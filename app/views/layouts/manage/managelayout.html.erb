@@ -31,10 +31,19 @@
           manage_root_path,
           class: "font-semibold text-lg hover:text-slate-200"
         ) %>
+
         <div class="ml-8 flex gap-6">
           <%= link_to(
             "Organizations",
             manage_organizations_path,
+            class: "hover:text-slate-200"
+          ) %>
+        </div>
+
+        <div class="ml-8 flex gap-6">
+          <%= link_to(
+            "People",
+            manage_people_path,
             class: "hover:text-slate-200"
           ) %>
         </div>
