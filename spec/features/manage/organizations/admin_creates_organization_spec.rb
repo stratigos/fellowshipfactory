@@ -2,9 +2,12 @@ require "rails_helper"
 
 RSpec.feature("An Admin Views New Organization Page", type: :feature) do
   scenario "Creates an Organization with Success" do
+    create(:person, first_name: "King", last_name: "Hezekiah")
+
     visit new_manage_organization_path
 
     fill_in("Name", with: "Prophets of the Promise")
+    check("Hezekiah")
 
     click_button("💾 Save")
 
