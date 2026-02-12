@@ -1,24 +1,32 @@
-# README
+# Fellowship Factory 🤝🏭
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Fellowship Factory is the collaboration engine for community impact. We connect nonprofits, NGOs, and civil society organizations into a shared network where resources, knowledge, and opportunities flow efficiently. By reducing fragmentation and unlocking coordination, we help charitable communities respond faster and achieve more together.
 
-Things you may want to cover:
+🚧 This application is under construction.
 
-* Ruby version
+## Technical Specifications
 
-* System dependencies
+TODO TBD
 
-* Configuration
+### Stack 💻
 
-* Database creation
+TODO ...
 
-* Database initialization
+Ruby on Rails 8, Hotwire, Tailwind, PostgreSQL ...
 
-* How to run the test suite
+View Components, Presenters, Service Objects ...
 
-* Services (job queues, cache servers, search engines, etc.)
+Composition, Deep Modules, Self Documentation, Metz Rules, TDD ...
 
-* Deployment instructions
+👨‍💻 Start server: `./bin/dev`
 
-* ...
+### AI / LLM Workflow 📈
+
+Using `Cursor` to rapidly prototype TailwindCSS styles for UI design.
+
+TODO: `Copilot` for code review?
+
+### Testing ✅
+
+TODO - RSpec, Capybara ... `./bin/rspec spec`
+
