@@ -27,6 +27,12 @@ class Manage::PeopleController < Manage::ManageController
     @people = Person.all
   end
 
+  def list_organizations
+    @person = Person.includes(:organizations).find(params[:id])
+
+    render(partial: "organizations_card", locals: {person: @person})
+  end
+
   def new
     @person = Person.new
   end
