@@ -9,7 +9,11 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   namespace(:manage) do
-    resources(:organizations, except: [:show])
+    resources(:organizations, except: [:show]) do
+      member do
+        get :list_people
+      end
+    end
 
     resources(:people, except: [:show]) do
       member do

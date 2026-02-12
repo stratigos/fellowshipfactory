@@ -18,6 +18,7 @@
       <tr>
         <th>Name</th>
         <th>ID</th>
+        <th>People</th>
         <th>Created</th>
         <th>Updated</th>
         <th>Actions</th>
@@ -31,6 +32,18 @@
         >
           <td class="pr-4 py-2"><%= organization.name %></td>
           <td class="px-4 py-2"><%= organization.id %></td>
+          <td class="px-4 py-2">
+            <% if organization.people.present? %>
+              <%= link_to(
+                "People",
+                list_people_manage_organization_path(organization),
+                class: "text-blue-600 hover:text-blue-800 underline",
+                data: {turbo_frame: "organization-people-overlay"}
+              ) %>
+            <% else %>
+              None
+            <% end %>
+          </td>
           <td class="px-4 py-2">
             <%= organization.created_at.strftime("%Y-%m-%d %H:%M:%S") %>
           </td>
@@ -61,4 +74,6 @@
       <% end %>
     </tbody>
   </table>
+
+  <turbo-frame id="organization-people-overlay"></turbo-frame>
 </div>
