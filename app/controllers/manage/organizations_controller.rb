@@ -56,8 +56,6 @@ class Manage::OrganizationsController < Manage::ManageController
   private
 
   def organization_params
-    params.require(:organization).permit(:name, person_ids: [])
-    # 🚧 TODO
-    # params.expect(organization: [:name, people_ids: []])
+    params.expect(organization: [:name, person_ids: []])
   end
 end
