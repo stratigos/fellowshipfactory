@@ -33,7 +33,13 @@ class Manage::OrganizationsController < Manage::ManageController
   end
 
   def index
-    @organizations = Organization.all
+    @organizations = Organization.includes(:people).all
+  end
+
+  def list_people
+    @organization = Organization.includes(:people).find(params[:id])
+
+    render(partial: "people_card", locals: {organization: @organization})
   end
 
   def new

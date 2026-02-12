@@ -23,6 +23,29 @@ RSpec.feature("An Admin Views Organizations Index Page", type: :feature) do
     end
   end
 
+  scenario("Views People List", js: true) do
+    person = create(:person, first_name: "Haggai")
+
+    organization =
+      create(:organization, name: "Minor Prophets", people: [person])
+
+    visit manage_organizations_path
+
+    within("#manage-organization-row-#{organization.id}") do
+      click_link("People")
+    end
+
+    within("#organization-people-overlay") do
+      expect(page).to have_content("People in Minor Prophets")
+      expect(page).to have_content("Haggai")
+
+      click_link("✖️")
+    end
+
+    expect(page).not_to have_content("People in Minor Prophets")
+    expect(page).not_to have_content("Haggai")
+  end
+
   scenario "Navigate to New Organization" do
     visit manage_organizations_url
 
