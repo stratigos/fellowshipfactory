@@ -2,8 +2,12 @@ require "rails_helper"
 
 RSpec.feature("An Admin Views People Index Page", type: :feature) do
   scenario "Landing on People Index" do
-    person_a = create(:person, first_name: "Jashobeam")
-    person_b = create(:person, first_name: "Eleazar")
+    organization = create(:organization, name: "The Three")
+
+    person_a =
+      create(:person, first_name: "Jashobeam", organizations: [organization])
+
+    person_b = create(:person, first_name: "Abishai")
 
     visit manage_people_url
 
@@ -12,15 +16,40 @@ RSpec.feature("An Admin Views People Index Page", type: :feature) do
 
     within("#manage-person-row-#{person_a.id}") do
       expect(page).to have_content("Jashobeam")
+      expect(page).to have_link("Organizations")
       expect(page).to have_link("✍️ Edit")
       expect(page).to have_button("🗑️ Delete")
     end
 
     within("#manage-person-row-#{person_b.id}") do
-      expect(page).to have_content("Eleazar")
+      expect(page).to have_content("Abishai")
+      expect(page).to have_content("None")
       expect(page).to have_link("✍️ Edit")
       expect(page).to have_button("🗑️ Delete")
     end
+  end
+
+  scenario("Views Organizations List", js: true) do
+    organization = create(:organization, name: "Major Prophets")
+
+    person =
+      create(:person, first_name: "Isaiah", organizations: [organization])
+
+    visit manage_people_path
+
+    within("#manage-person-row-#{person.id}") do
+      click_link("Organizations")
+    end
+
+    within("#person-organizations-overlay") do
+      expect(page).to have_content("Organizations for Isaiah")
+      expect(page).to have_content("Major Prophets")
+
+      click_link("✖️")
+    end
+
+    expect(page).not_to have_content("Organizations for Isaiah")
+    expect(page).not_to have_content("Major Prophets")
   end
 
   scenario "Navigate to New Person" do
