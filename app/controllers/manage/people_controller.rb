@@ -24,7 +24,7 @@ class Manage::PeopleController < Manage::ManageController
   end
 
   def index
-    @people = Person.includes(:organizations).all
+    @people = Person.includes(:organizations).order(:last_name)
   end
 
   def list_organizations
