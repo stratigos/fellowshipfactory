@@ -17,11 +17,9 @@
       </div>
 
       <ul class="space-y-2">
-        <% organization.people.each do |people| %>
+        <% presented_people.each do |person| %>
           <li class="rounded border border-blue-500 px-3 py-2">
-            <div class="font-medium">
-              <%= people.last_name %>, <%= people.first_name %>
-            </div>
+            <div class="font-medium"><%= person.lname_fname %></div>
           </li>
         <% end %>
       </ul>

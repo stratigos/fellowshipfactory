@@ -39,19 +39,23 @@
   </div>
 
   <div class="mt-4 flex items-center gap-3">
-    <%= form.label(
-      "People",
-      class: "text-sm font-medium text-slate-700 shrink-0 min-w-[4rem]"
-    ) %>
+    <% if @presented_people.present? %>
+      <%= form.label(
+        "People",
+        class: "text-sm font-medium text-slate-700 shrink-0 min-w-[4rem]"
+      ) %>
 
-    <%= form.collection_checkboxes(
-      :person_ids,
-      Person.order(:last_name),
-      :id,
-      :last_name,
-      {},
-      { class: "block" }
-    ) %>
+      <%= form.collection_checkboxes(
+        :person_ids,
+        @presented_people,
+        :id,
+        :lname_fname,
+        {},
+        { class: "block" }
+      ) %>
+    <% else %>
+      <p>No People found.</p>
+    <% end %>
   </div>
 
   <div class="mt-16">

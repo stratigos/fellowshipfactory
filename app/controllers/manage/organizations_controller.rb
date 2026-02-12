@@ -30,6 +30,7 @@ class Manage::OrganizationsController < Manage::ManageController
 
   def edit
     @organization = Organization.find(params[:id])
+    @presented_people = Manage::PresentPeople.call
   end
 
   def index
@@ -37,13 +38,21 @@ class Manage::OrganizationsController < Manage::ManageController
   end
 
   def list_people
-    @organization = Organization.includes(:people).find(params[:id])
+    organization = Organization.includes(:people).find(params[:id])
+    presented_people = Manage::PresentPeople.call(people: organization.people)
 
-    render(partial: "people_card", locals: {organization: @organization})
+    render(
+      partial: "people_card",
+      locals: {
+        organization: organization,
+        presented_people: presented_people
+      }
+    )
   end
 
   def new
     @organization = Organization.new
+    @presented_people = Manage::PresentPeople.call
   end
 
   def update
