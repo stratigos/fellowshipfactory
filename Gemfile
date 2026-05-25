@@ -13,7 +13,7 @@ gem "puma", ">= 5.0"
 gem "stimulus-rails", "~> 1.3.4"
 gem "turbo-rails", "~> 2.0.23"
 gem "pg", "~> 1.6.3"
-gem "solid_cable", "~> 3.0.12" # Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
+gem "solid_cable", "~> 4.0.0" # Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
 gem "solid_cache", "~> 1.0.10" # Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
 gem "solid_queue", "~> 1.4.0" # Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
 gem "standard", "~> 1.54.0"
