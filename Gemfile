@@ -35,6 +35,6 @@ end
 group :test do
   gem "rspec-rails", "~> 8.0"
   gem "selenium-webdriver"
-  gem "shoulda-matchers", "~> 7.0"
+  gem "shoulda-matchers", "~> 8.0"
   # gem "webdrivers" # updates so slow, it fails when new chromedriver released!
 end
