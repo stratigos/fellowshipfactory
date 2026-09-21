@@ -6,7 +6,7 @@ gem "bootsnap", "~> 1.24.5", require: false # Reduces boot times through caching
 # gem "bcrypt", "~> 3.1.7" # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 gem "image_processing", "~> 2.0" # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "importmap-rails", "~> 2.2" # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
-gem "jbuilder", "~> 2.15.0"
+gem "jbuilder", "~> 2.15.1"
 gem "kamal", "~> 2.11.0", require: false # Deploy this application anywhere as a Docker container [https://kamal-deploy.org]
 gem "propshaft", "~> 1.3.2" # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "puma", ">= 5.0"
